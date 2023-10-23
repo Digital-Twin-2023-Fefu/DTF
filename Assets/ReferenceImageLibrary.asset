@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
   m_Name: ReferenceImageLibrary
   m_EditorClassIdentifier: 
-  m_GuidLow: 0
-  m_GuidHigh: 0
+  m_GuidLow: 5141922928897036347
+  m_GuidHigh: 15652178994439044517
   m_DataStore:
     m_Storage: []
   m_Images:
@@ -26,4 +26,4 @@ MonoBehaviour:
     m_Size: {x: 0, y: 0}
     m_SpecifySize: 0
     m_Name: Anchor
-    m_Texture: {fileID: 0}
+    m_Texture: {fileID: 2800000, guid: 16549e1e9a21df24c807ee05d119aca8, type: 3}
