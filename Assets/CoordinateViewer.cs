@@ -25,11 +25,7 @@ public class CoordinateViewer : MonoBehaviour
         string coords = string.Format("X:{0}, Y{1}, Z{2}", camera.transform.position.x, camera.transform.position.y, camera.transform.position.z);
         text.text = coords;
 
-        string serverIP = "10.193.162.205";
-        int serverPort= 8080;
-        TcpClient client = new TcpClient(serverIP, serverPort);
-
-        NetworkStream stream = client.GetStream();
+        
 
         // Генерируйте новые координаты здесь
         double coordinates1, coordinates2, coordinates3;
@@ -39,8 +35,7 @@ public class CoordinateViewer : MonoBehaviour
         
         string coordinates = string.Format("{0};{1};{2}", coordinates1, coordinates2, coordinates3);
 
-        byte[] data = Encoding.UTF8.GetBytes(coordinates);
-        stream.Write(data, 0, data.Length);
+       
 
         // byte[] data = Encoding.UTF8.GetBytes();
         // stream.Write(data, 0, data.Length);

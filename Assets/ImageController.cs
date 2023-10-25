@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.XR.ARFoundation;
 
 public class ImageController : MonoBehaviour
@@ -16,10 +17,16 @@ public class ImageController : MonoBehaviour
     // скрипт, отвечающий за отслеживание изображений (меток)
     private ARTrackedImageManager ARTrackedImageManagerScript;
 
+    public Button button;
+
     private void Awake()
     {
         // Создание ссылки на скрипт, , отвечающий за отслеживание изображений (меток) 
         ARTrackedImageManagerScript = FindObjectOfType<ARTrackedImageManager>();
+        SetAnchor = true;
+
+         button.onClick.AddListener(SetRoom);
+
     }
 
 
@@ -29,9 +36,18 @@ public class ImageController : MonoBehaviour
         // Нахождение в сцене объекта с тэгом Anchor
         Anchor = GameObject.FindWithTag("Anchor");
         // Присваивание объекту имени Anchor
-        Anchor.name = "Anchor";
+        if (Anchor) Anchor.name = "Anchor";
 
-        if (SetAnchor)
+        if (SetAnchor && Anchor)
+        {
+            
+        }
+
+    }
+
+    void SetRoom(){
+        Debug.Log("Button pressed");
+        if (SetAnchor && Anchor)
         {
             // Установка объекта Room в место объекта Anchor
             Instantiate(Room, Anchor.transform.position, Anchor.transform.rotation);
@@ -41,6 +57,5 @@ public class ImageController : MonoBehaviour
 
             SetAnchor = false;
         }
-
     }
 }
